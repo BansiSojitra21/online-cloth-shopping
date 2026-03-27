@@ -1,0 +1,26 @@
+1. Get your real MongoDB URI from Atlas (you do this once)
+In your browser:
+Go to MongoDB Atlas → open your cluster.
+Click “Connect” → “Connect your application”.
+Copy the mongodb+srv://... URI for Node.js.
+It will look like:
+mongodb+srv://<yourUser>:<yourPassword>@cluster0.xxxxx.mongodb.net/<yourDbName>?retryWrites=true&w=majority&appName=Cluster0
+This must not be the tutorial w92jz URI; it must match your cluster exactly.
+2. Put that URI in backend/.env (you do this in VS Code / your editor)
+In your editor, open (or create) this file:
+E:\sem-6\project1\online cloth shopping\backend\.env
+Put exactly this line (with your values filled in):
+MONGODB_URI=mongodb+srv://<yourUser>:<yourPassword>@cluster0.xxxxx.mongodb.net/<yourDbName>?retryWrites=true&w=majority&appName=Cluster0
+Replace <yourUser>, <yourPassword>, <yourDbName>, and xxxxx with what Atlas gave you.
+No quotes, no extra spaces.
+Also in Atlas → Network Access → IP Access List, be sure to:
+Add your current IP, or
+Use 0.0.0.0/0 (“Allow from anywhere”) for development.
+3. Run the only command needed (I’ll give you exactly what to paste)
+In PowerShell (in the project root):
+cd "E:\sem-6\project1\online cloth shopping\backend"npm run server
+If the URI and IP whitelist are correct, you should see:
+Server started on PORT : 4000
+DB Connected
+Then reload your frontend page; the network error will disappear.
+If you want, paste the redacted MONGODB_URI you put in .env here (hide username/password), and I’ll quickly verify that its format is correct.

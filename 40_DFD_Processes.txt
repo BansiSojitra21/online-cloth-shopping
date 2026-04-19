@@ -1,0 +1,882 @@
+// =============================== //
+// CLIENT-SIDE PROCESSES (1-20)     //
+// =============================== //
+
+// 1. User Registration Process
+digraph Process1 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>1. User Registration Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>1.0</B><BR/>Register>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To allow new customers to create an\naccount in the system", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" User Details\n(Name/Email/Pass) ", minlen=3];
+    Process -> End [label=" Success Message\n& User ID ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 2. User Login Process
+digraph Process2 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>2. User Login Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>2.0</B><BR/>Login>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To allow returning customers to securely\naccess their accounts", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Email &\nPassword ", minlen=3];
+    Process -> End [label=" Auth Token ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 3. User Logout Process
+digraph Process3 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>3. User Logout Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>3.0</B><BR/>Logout>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To securely end the user session and clear\naccess tokens", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Auth Token (Session) ", minlen=3];
+    Process -> End [label=" Session Terminated ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 4. Profile Update Process
+digraph Process4 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>4. Profile Update Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>4.0</B><BR/>Update\nProfile>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To allow users to modify their personal details", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Updated Personal Info ", minlen=3];
+    Process -> End [label=" Saved Profile Data ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 5. Browse Homepage Process
+digraph Process5 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>5. Browse Homepage Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>5.0</B><BR/>Load\nHome>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To display the initial curated dashboard\nof the storefront", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Request Homepage ", minlen=3];
+    Process -> End [label=" Featured Products List ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 6. Search Products Process
+digraph Process6 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>6. Search Products Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>6.0</B><BR/>Search>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To allow users to find specific clothing items\nby name", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Search Keyword ", minlen=3];
+    Process -> End [label=" Matched Products List ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 7. Filter Products Process
+digraph Process7 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>7. Filter Products Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>7.0</B><BR/>Filter>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To refine displayed clothing items based on\nselected categories", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Category/Subcategory ID ", minlen=3];
+    Process -> End [label=" Filtered Product Catalog ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 8. View Product Details Process
+digraph Process8 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>8. View Product Details Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>8.0</B><BR/>View\nDetails>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To display detailed description pricing\nand images of a cloth", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Product ID ", minlen=3];
+    Process -> End [label=" Product Meta Data ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 9. Add Item to Cart Process
+digraph Process9 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>9. Add Item to Cart Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>9.0</B><BR/>Add\nCart>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To allow users to stage a specific item\nfor purchase", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Product ID & Size ", minlen=3];
+    Process -> End [label=" Updated Cart State ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 10. Update Cart Quantity Process
+digraph Process10 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>10. Update Cart Quantity Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>10.0</B><BR/>Edit\nCart>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To modify the number of items staged\nin the shopping cart", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Product ID\n& New Qty ", minlen=3];
+    Process -> End [label=" Updated Cart Totals ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 11. Remove Item from Cart Process
+digraph Process11 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>11. Remove Item from Cart Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>11.0</B><BR/>Remove\nCart>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To remove unwanted clothing items\nfrom the cart", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Product ID ", minlen=3];
+    Process -> End [label=" Cleared Item ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 12. Add to Wishlist Process
+digraph Process12 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>12. Add to Wishlist Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>12.0</B><BR/>Add\nWishlist>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To save specific products for\nfuture consideration", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Product ID ", minlen=3];
+    Process -> End [label=" Wishlist State ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 13. Proceed to Checkout Process
+digraph Process13 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>13. Proceed to Checkout Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>13.0</B><BR/>Checkout>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To initialize the final purchase\nfunnel for the user", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Cart Contents ", minlen=3];
+    Process -> End [label=" Order Summary ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 14. Select Shipping Address Process
+digraph Process14 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>14. Select Shipping Address Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>14.0</B><BR/>Shipping>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To capture where the purchased\nclothes should be sent", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Address Details ", minlen=3];
+    Process -> End [label=" Confirmed\nDelivery Addr ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 15. Process COD Order Process
+digraph Process15 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>15. Process COD Order Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>15.0</B><BR/>Place\nCOD>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To confirm an order using the Cash\non Delivery method", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Address &\nCart Data ", minlen=3];
+    Process -> End [label=" Verified Order ID ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 16. Process Razorpay Payment Process
+digraph Process16 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>16. Process Razorpay Payment Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>16.0</B><BR/>Razorpay\nPayment>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To authorize card/UPI payments\nexternally using Razorpay", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Checkout Amount ", minlen=3];
+    Process -> End [label=" Payment Success Token ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 17. Process Stripe Payment Process
+digraph Process17 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>17. Process Stripe Payment Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>17.0</B><BR/>Stripe\nPayment>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To securely process international\ncard payments", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Credit Card Details ", minlen=3];
+    Process -> End [label=" Stripe Success Token ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 18. Cancel Order Process
+digraph Process18 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>18. Cancel Order Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>18.0</B><BR/>Cancel\nOrder>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To allow customers to revoke a purely\nCOD order before shipping", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Order ID ", minlen=3];
+    Process -> End [label=" Cancelled Status ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 19. View Order History Process
+digraph Process19 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>19. View Order History Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>19.0</B><BR/>Fetch\nOrders>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To display all previous purchases\nmade by the user", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" User ID ", minlen=3];
+    Process -> End [label=" List of Past Orders ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 20. Track Order Status Process
+digraph Process20 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>20. Track Order Status Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>20.0</B><BR/>Track\nOrder>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To allow the customer to see if their\ncloth is packed or shipped", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Order ID ", minlen=3];
+    Process -> End [label=" Current Delivery State ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// =============================== //
+// ADMIN-SIDE PROCESSES (21-40)     //
+// =============================== //
+
+// 21. Admin Login Process
+digraph Process21 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>21. Admin Login Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>21.0</B><BR/>Admin\nLogin>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To securely restrict system administration\nto authorized staff", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Admin Credentials ", minlen=3];
+    Process -> End [label=" Admin Session Token ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 22. Admin Logout Process
+digraph Process22 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>22. Admin Logout Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>22.0</B><BR/>Admin\nLogout>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To securely terminate the admin session", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Admin Session ", minlen=3];
+    Process -> End [label=" Session Cleared ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 23. Add Category Process
+digraph Process23 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>23. Add Category Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>23.0</B><BR/>Create\nCategory>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To expand the top-level classification\nof clothing", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Category Name\n& Icon ", minlen=3];
+    Process -> End [label=" New Category Saved ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 24. Add SubCategory Process
+digraph Process24 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>24. Add SubCategory Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>24.0</B><BR/>Create\nSubC>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To create specific groupings underneath\na core category", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Subcategory Details ", minlen=3];
+    Process -> End [label=" New SubCategory\nSaved ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 25. Add New Product Process
+digraph Process25 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>25. Add New Product Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>25.0</B><BR/>Add\nProduct>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To list a new piece of clothing\non the store for sale", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Product Form Data\n& Images ", minlen=3];
+    Process -> End [label=" Published Product ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 26. Update Product Details Process
+digraph Process26 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>26. Update Product Details Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>26.0</B><BR/>Edit\nProduct>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To modify pricing stock or descriptions\nof an existing cloth", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Edited Form Data ", minlen=3];
+    Process -> End [label=" Updated Product Entry ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 27. Remove Product Process
+digraph Process27 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>27. Remove Product Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>27.0</B><BR/>Delete\nProduct>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To permanently remove a clothing item\nfrom the catalog", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Product ID ", minlen=3];
+    Process -> End [label=" Product Purged ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 28. Manage Sizes/Variants Process
+digraph Process28 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>28. Manage Sizes/Variants Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>28.0</B><BR/>Set\nSizes>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To configure the available sizing\noptions for an item", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Selected Sizes (S/M/L) ", minlen=3];
+    Process -> End [label=" Variant Matrix ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 29. Fetch All Orders Process
+digraph Process29 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>29. Fetch All Orders Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>29.0</B><BR/>Load\nOrders>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To load the master list of all purchases\nacross the system", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Admin Token ", minlen=3];
+    Process -> End [label=" Global Orders List ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 30. Update Delivery Status Process
+digraph Process30 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>30. Update Delivery Status Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>30.0</B><BR/>Update\nStatus>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To manually transition orders from\nPacked to Shipped to Delivered", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Order ID\n& New Status ", minlen=3];
+    Process -> End [label=" Status Saved to DB ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 31. Admin Dashboard Metrics Process
+digraph Process31 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>31. Admin Dashboard Metrics Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>31.0</B><BR/>Load\nMetrics>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To present a high-level overview\nof store performance", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Fetch Request ", minlen=3];
+    Process -> End [label=" Sales & User Stats ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 32. Image Upload Process (Cloudinary)
+digraph Process32 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>32. Image Upload Process (Cloudinary):</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>32.0</B><BR/>Upload\nImages>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To securely upload and optimize\nproduct assets in the cloud", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Raw Image Files ", minlen=3];
+    Process -> End [label=" Image URLs ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 33. Admin Delete Category Process
+digraph Process33 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>33. Admin Delete Category Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>33.0</B><BR/>Delete\nCat>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To remove a top-level category\nfrom the system", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Category ID ", minlen=3];
+    Process -> End [label=" Category Removed ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 34. Admin Delete SubCategory Process
+digraph Process34 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>34. Admin Delete SubCategory Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>34.0</B><BR/>Delete\nSubC>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To remove a specific sub-category", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" SubCat ID ", minlen=3];
+    Process -> End [label=" SubCategory Removed ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 36. View Cart Process
+digraph Process36 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>36. View Cart Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>36.0</B><BR/>Load\nCart>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To visually display the current cart\nitems and totals", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" User ID\n(or Guest session) ", minlen=3];
+    Process -> End [label=" Rendered Cart Page ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 37. Related Products Process
+digraph Process37 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>37. Related Products Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>37.0</B><BR/>Fetch\nRelated>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To suggest similar clothing items\nto the customer", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Current Product ID ", minlen=3];
+    Process -> End [label=" Related Items List ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+// 38. Bestseller Fetch Process
+digraph Process38 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>38. Bestseller Fetch Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>38.0</B><BR/>Load\nBest>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To fetch and display the top-performing products", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Request ", minlen=3];
+    Process -> End [label=" Bestseller Collection ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}
+
+
+// 40. Verify Payment Webhook Process
+digraph Process40 {
+    rankdir=TB; 
+    node [fontname="Arial"];
+    edge [fontname="Arial", fontsize=11];
+
+    labelloc="t"; labeljust="l";
+    label=<<TABLE BORDER="0"><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="18"><B>40. Verify Payment Webhook Process:</B></FONT></TD></TR></TABLE>>;
+
+    Start [shape=none, label="", width=0.1];
+    End [shape=none, label="", width=0.1];
+    
+    Process [shape=circle, label=<<B>40.0</B><BR/>Verify\nSig>, width=1.5, fixedsize=true];
+    Desc [shape=box, label="To asynchronously confirm payment\nsuccess from Stripe/Razorpay", margin=0.2];
+
+    { rank=same; Start; Process; End; }
+    
+    Start -> Process [label=" Webhook Signature ", minlen=3];
+    Process -> End [label=" Confirmed DB Payment ", minlen=3];
+    
+    Process -> Desc [dir=none];
+}

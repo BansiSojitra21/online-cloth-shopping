@@ -11,8 +11,6 @@ const seedData = async () => {
         console.log("Connected to MongoDB for seeding.");
 
         // Clear existing categories and subcategories if needed (optional)
-        // await categoryModel.deleteMany({});
-        // await subCategoryModel.deleteMany({});
 
         const categories = ["Men", "Women", "Kids"];
         const subCategories = ["Topwear", "Winterwear", "Bottomwear"];

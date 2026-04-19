@@ -107,10 +107,8 @@ const OrderLineChart = ({ trend = [], height = 220 }) => {
     return { x, y, ...point }
   })
 
-  // Create path data for line
   const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ')
   
-  // Create path data for area fill
   const areaPath = `
     ${linePath} 
     L ${points[points.length - 1].x} ${padding + chartHeight} 

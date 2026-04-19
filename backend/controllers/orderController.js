@@ -4,7 +4,6 @@ import Stripe from 'stripe'
 import razorpay from 'razorpay'
 import { mapOrderImages } from "../utils/localImages.js"
 
-// global variables
 const currency = 'inr'
 const deliveryCharge = 10
 

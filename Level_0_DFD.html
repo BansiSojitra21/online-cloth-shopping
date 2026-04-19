@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Context Level Diagram (Level 0)</title>
+<style>
+  body { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f0f0f0; 
+    margin: 40px auto; 
+  }
+  .canvas { 
+    background-color: white; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  }
+  text { 
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; 
+    fill: black; 
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG starts here -->
+<svg class="canvas" width="1400" height="800" xmlns="http://www.w3.org/2000/svg">
+  
+  <defs>
+    <!-- Standard sharp black arrowhead -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- =============================== TITLE =============================== -->
+  <text x="700" y="60" font-size="32" text-anchor="middle" text-decoration="underline">Context level diagram (level 0)</text>
+
+  <!-- =============================== CENTRAL SYSTEM =============================== -->
+  <circle cx="700" cy="400" r="160" stroke="black" stroke-width="1.5" fill="none" />
+  <text x="700" y="380" font-size="24" font-weight="bold" text-anchor="middle">Outfit</text>
+  <text x="700" y="415" font-size="24" font-weight="bold" text-anchor="middle">Management</text>
+  <text x="700" y="450" font-size="24" font-weight="bold" text-anchor="middle">Hub</text>
+
+  <!-- =============================== RECTANGLES (ENTITIES) =============================== -->
+  <!-- Top Left: Customer -->
+  <rect x="150" y="100" width="200" height="100" stroke="black" stroke-width="1.5" fill="none"/>
+  <text x="250" y="158" font-size="22" font-weight="bold" text-anchor="middle">Customer</text>
+
+  <!-- Top Right: Admin -->
+  <rect x="1050" y="100" width="200" height="100" stroke="black" stroke-width="1.5" fill="none"/>
+  <text x="1150" y="158" font-size="22" font-weight="bold" text-anchor="middle">Admin / Staff</text>
+
+  <!-- Bottom Left: Payment Gateway -->
+  <rect x="150" y="600" width="200" height="100" stroke="black" stroke-width="1.5" fill="none"/>
+  <text x="250" y="658" font-size="22" font-weight="bold" text-anchor="middle">Payment Gateway</text>
+
+  <!-- Bottom Right: Delivery System -->
+  <rect x="1050" y="600" width="200" height="100" stroke="black" stroke-width="1.5" fill="none"/>
+  <text x="1150" y="658" font-size="22" font-weight="bold" text-anchor="middle">Delivery System</text>
+
+
+  <!-- ============================================== DATA FLOW LINES ============================================== -->
+  
+  <!-- ====== TOP LEFT (CUSTOMER) ====== -->
+  <path d="M 180 200 L 180 260 L 618 260" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 220 200 L 220 280 L 590 280" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 260 200 L 260 300 L 571 300" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 557 320 L 300 320 L 300 200" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 547 340 L 340 340 L 340 200" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="420" y="255" font-size="13" text-anchor="middle">register for account</text>
+  <text x="420" y="275" font-size="13" text-anchor="middle">Browse products</text>
+  <text x="420" y="295" font-size="13" text-anchor="middle">place order requests</text>
+  <text x="420" y="315" font-size="13" text-anchor="middle">product details updates</text>
+  <text x="420" y="335" font-size="13" text-anchor="middle">order confirmation</text>
+
+
+  <!-- ====== TOP RIGHT (ADMIN) ====== -->
+  <path d="M 1080 200 L 1080 260 L 777 260" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1120 200 L 1120 280 L 805 280" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 824 300 L 1160 300 L 1160 200" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 838 320 L 1200 320 L 1200 200" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 848 340 L 1240 340 L 1240 200" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="980" y="255" font-size="13" text-anchor="middle">manage products &amp; categories</text>
+  <text x="980" y="275" font-size="13" text-anchor="middle">update order delivery status</text>
+  <text x="980" y="295" font-size="13" text-anchor="middle">sales &amp; inventory reports</text>
+  <text x="980" y="315" font-size="13" text-anchor="middle">incoming order alerts</text>
+  <text x="980" y="335" font-size="13" text-anchor="middle">customer management data</text>
+
+
+  <!-- ====== BOTTOM LEFT (PAYMENT GATEWAY) ====== -->
+  <path d="M 623 540 L 190 540 L 190 600" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 595 520 L 230 520 L 230 600" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 270 600 L 270 500 L 576 500" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 310 600 L 310 480 L 562 480" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="420" y="535" font-size="13" text-anchor="middle">send payment request</text>
+  <text x="420" y="515" font-size="13" text-anchor="middle">order amount &amp; billing details</text>
+  <text x="420" y="495" font-size="13" text-anchor="middle">transaction ID details</text>
+  <text x="420" y="475" font-size="13" text-anchor="middle">successful payment confirmation</text>
+
+  <!-- ====== BOTTOM RIGHT (DELIVERY) ====== -->
+  <path d="M 777 540 L 1090 540 L 1090 600" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 805 520 L 1130 520 L 1130 600" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1170 600 L 1170 500 L 824 500" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1210 600 L 1210 480 L 838 480" stroke="black" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="980" y="535" font-size="13" text-anchor="middle">customer delivery address</text>
+  <text x="980" y="515" font-size="13" text-anchor="middle">package dimensions &amp; weight</text>
+  <text x="980" y="495" font-size="13" text-anchor="middle">provide tracking ID</text>
+  <text x="980" y="475" font-size="13" text-anchor="middle">update shipping status</text>
+
+</svg>
+
+</body>
+</html>
